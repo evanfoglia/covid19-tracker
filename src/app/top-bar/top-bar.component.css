@@ -1,0 +1,17 @@
+.container-fluid {
+    background-color: #782f40;
+    position: absolute;
+    width: 100%;
+    padding: 30px;
+}
+
+.mytitle {
+    margin-left: 40px;
+}
+
+.mat-stroked-button {
+    color: white;
+    background-color: black;
+    border: black;
+}
+
