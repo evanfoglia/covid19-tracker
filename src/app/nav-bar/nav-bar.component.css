@@ -1,0 +1,30 @@
+header {
+    background: #f8f6fa;
+}
+
+.nav {
+    background-color: rgba(163, 200, 224, 0.788);
+    overflow: hidden;
+  }
+
+.nav .logo{
+    font-weight: bold;
+    float: left;
+}
+
+  .nav ul{
+    list-style-type: none;
+    margin: 0; padding: 0;
+  }
+
+.nav a {
+    float: right;
+    color: #1b3235;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px; }
+
+    a:hover {
+        background: #a7e9ee;
+    }
