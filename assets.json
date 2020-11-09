@@ -1,0 +1,68 @@
+{
+  "assets": [
+    {
+      "id": 1,
+      "compressorid": "1",
+      "gatewayid": "0123",
+      "chillerid": "0456",
+      "phonenumber": "7411205213",
+      "simiccid": "123_3"
+    },
+    {
+      "id": 2,
+      "compressorid": "2",
+      "gatewayid": "34355454",
+      "chillerid": "343434",
+      "phonenumber": "7411205213",
+      "simiccid": "4545_3"
+    },
+    {
+      "id": 3,
+      "compressorid": "3",
+      "gatewayid": "12345",
+      "chillerid": "343545",
+      "phonenumber": "78994994",
+      "simiccid": "3434_1"
+    },
+    {
+      "id": 4,
+      "compressorid": "4",
+      "gatewayid": "454545_1",
+      "chillerid": "67676",
+      "phonenumber": "7411205213",
+      "simiccid": "5656"
+    },
+    {
+      "id": 5,
+      "compressorid": "5",
+      "gatewayid": "34354545",
+      "chillerid": "45454_1",
+      "phonenumber": "565656",
+      "simiccid": "454545"
+    },
+    {
+      "compressorid": "6",
+      "gatewayid": "454545",
+      "chillerid": "565656",
+      "phonenumber": "7411205213",
+      "simiccid": "45454",
+      "id": 6
+    },
+    {
+      "compressorid": "123",
+      "gatewayid": "456",
+      "chillerid": "789",
+      "phonenumber": "9898989898",
+      "simiccid": "66666666666",
+      "id": 7
+    },
+    {
+      "compressorid": "143546768",
+      "gatewayid": "23143457688990",
+      "chillerid": "21344576889900",
+      "phonenumber": "213455555555556",
+      "simiccid": "13425678",
+      "id": 8
+    }
+  ]
+}

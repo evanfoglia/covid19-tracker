@@ -1,0 +1,53 @@
+<div class="container">
+  <h3 mat-dialog-title>Add new Order</h3>
+
+  <form class="mat-dialog-content" (ngSubmit)="submit" #formControl="ngForm">
+
+    <!--  <div class="form">
+          <mat-form-field color="accent">
+            <input matInput #input class="form-control" placeholder="Id" [(ngModel)]="data.id" name="id" required >
+            <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+        </div>-->
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <input matInput #input class="form-control" placeholder="field1" [(ngModel)]="data.customerid" name="customerid" required >
+        <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+    
+    <!--Textarea for demo purposes-->
+    <div class="form">
+      <mat-form-field color="accent">
+        <textarea matInput #input class="form-control" placeholder="field2" [(ngModel)]="data.productid" name="productid" required ></textarea>
+        <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+        <mat-form-field color="accent">
+          <textarea matInput #input class="form-control" placeholder="field3" [(ngModel)]="data.ordernumber" name="ordernumber" required ></textarea>
+          <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form">
+          <mat-form-field color="accent">
+            <textarea pattern="^(?=.*[0-9])[- +()0-9]+$" matInput #input class="form-control" placeholder="date1" [(ngModel)]="data.sdate" name="sdate" required ></textarea>
+            <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form">
+            <mat-form-field color="accent">
+              <textarea pattern="^(?=.*[0-9])[- +()0-9]+$" matInput #input class="form-control" placeholder="date2" [(ngModel)]="data.edate" name="edate" required ></textarea>
+              <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+          </div>
+
+    <div mat-dialog-actions>
+      <button mat-button [type]="submit" [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="confirmAdd()">Save</button>
+      <button mat-button (click)="onNoClick()" tabindex="-1">Cancel</button>
+    </div>
+  </form>
+</div>

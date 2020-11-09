@@ -1,0 +1,53 @@
+<div class="container">
+  <h3 mat-dialog-title>Add new Asset</h3>
+
+  <form class="mat-dialog-content" (ngSubmit)="submit" #formControl="ngForm">
+
+    <!--  <div class="form">
+          <mat-form-field color="accent">
+            <input matInput #input class="form-control" placeholder="Id" [(ngModel)]="data.id" name="id" required >
+            <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+        </div>-->
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <input matInput #input class="form-control" placeholder="Field1" [(ngModel)]="data.compressorid" name="compressorid" required >
+        <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+    
+    <!--Textarea for demo purposes-->
+    <div class="form">
+      <mat-form-field color="accent">
+        <textarea matInput #input class="form-control" placeholder="Field2" [(ngModel)]="data.gatewayid" name="gatewayid" required ></textarea>
+        <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+        <mat-form-field color="accent">
+          <textarea matInput #input class="form-control" placeholder="Field3" [(ngModel)]="data.chillerid" name="chillerid" required ></textarea>
+          <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form">
+          <mat-form-field color="accent">
+            <textarea pattern="^(?=.*[0-9])[- +()0-9]+$" matInput #input class="form-control" placeholder="Field4" [(ngModel)]="data.phonenumber" name="phonenumber" required ></textarea>
+            <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form">
+            <mat-form-field color="accent">
+              <textarea matInput #input class="form-control" placeholder="Sim_iccid" [(ngModel)]="data.simiccid" name="Field5" required ></textarea>
+              <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+          </div>
+
+    <div mat-dialog-actions>
+      <button mat-button [type]="submit" [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="confirmAdd()">Save</button>
+      <button mat-button (click)="onNoClick()" tabindex="-1">Cancel</button>
+    </div>
+  </form>
+</div>
