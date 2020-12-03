@@ -29,7 +29,7 @@ There are 2 files that this application uses
 Instead of using a database, we are using files realtime. These 2 files will serve as 2 tables and any addition,update or deletes done to any of the form date is done directly on these files. (CRUD OPERATIONS)
 
 ## Table structures
-The structure of these files are stored as models in orders.ts and assets.ts
+The structure of these files are stored as models in orders.ts
 structure is defined as shown in the orders.ts example
  
  id: number;
@@ -70,7 +70,7 @@ When the delete button is clicked, the data to be deleted is displayed using the
 
 
 ## Downloading the date in CSV, Excel, Text and JSON formats
-The data in the tables/file that can be downloaded in csv,xls,txt and json formats using the exported command as shown below as coded in orderlist.components.html. Similarly it is done for assets too.
+The data in the tables/file that can be downloaded in csv,xls,txt and json formats using the exported command as shown below as coded in orderlist.components.html.
                    (click)="exporter.exportTable('xlsx',{fileName: 'orders'})">Excel
                    (click)="exporter.exportTable('csv',{fileName: 'orders'})">CSV
                    (click)="exporter.exportTable('json',{fileName: 'orders'})">Json
@@ -141,10 +141,6 @@ updateOrder (order: Order): void {
   ## Filtering the data from the table - example of assets
      return merge(...displayDataChanges).pipe(map( () => {
         // Filter data
-        this.filteredData = this._exampleDatabase.data.slice().filter((asset: Asset) => {	
-          const searchStr = (asset.compressorid + asset.gatewayid + asset.chillerid + asset.phonenumber + asset.simiccid).toString().toLowerCase();	
-          return searchStr.indexOf(this.filter.toLowerCase()) !== -1;	
-        });
 
         // Sort filtered data
         const sortedData = this.sortData(this.filteredData.slice());
