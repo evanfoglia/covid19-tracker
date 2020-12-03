@@ -13,20 +13,15 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {OrderService} from './services/order.service';
-import {AssetService} from './services/asset.service';
 import {AddDialogComponent} from './dialogs/add/add.dialog.component';
 import {EditDialogComponent} from './dialogs/edit/edit.dialog.component';
 import {DeleteDialogComponent} from './dialogs/delete/delete.dialog.component';
-import {AddAssetDialogComponent} from './dialogs/addasset/addasset.dialog.component';
-import {EditAssetDialogComponent} from './dialogs/editasset/editasset.dialog.component';
-import {DeleteAssetDialogComponent} from './dialogs/deleteasset/deleteasset.dialog.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatTableExporterModule} from 'mat-table-exporter';
 import { AppRoutingModule,routingComponents } from './app-routing.module';
 import {MatListModule} from '@angular/material/list';
 import {MatSidenavModule} from '@angular/material/sidenav';
-import {AssetlistComponent} from './assetlist/assetlist.component';
 import {OrderlistComponent} from './orderlist/orderlist.component';
 import { HomePageComponent } from './home-page/home-page.component';
 
@@ -36,12 +31,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     AppComponent,
     routingComponents,
     AddDialogComponent,
-    AddAssetDialogComponent,
     EditDialogComponent,
-    EditAssetDialogComponent,
     DeleteDialogComponent,
-    DeleteAssetDialogComponent,
-    AssetlistComponent,
     OrderlistComponent,
     HomePageComponent
   ],
@@ -67,14 +58,11 @@ import { HomePageComponent } from './home-page/home-page.component';
   entryComponents: [
     AddDialogComponent,
     EditDialogComponent,
-    DeleteDialogComponent,
-    AddAssetDialogComponent,
-    EditAssetDialogComponent,
-    DeleteAssetDialogComponent
+    DeleteDialogComponent
+  
   ],
   providers: [
-    OrderService,
-    AssetService
+    OrderService
   ],
   bootstrap: [AppComponent]
 })

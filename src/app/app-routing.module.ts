@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { OrderlistComponent } from './orderlist/orderlist.component';
-import { AssetlistComponent } from './assetlist/assetlist.component';
 import { HomePageComponent } from './home-page/home-page.component';
 /*import { AboutComponent } from './about/about.component';
 import { PrivacyComponent } from './privacy/privacy.component';
@@ -12,7 +11,6 @@ const routes: Routes = [
   { path: '', component: HomePageComponent},
   { path: 'orderlist', component: OrderlistComponent },
  // { path: '',   redirectTo: '/orderlist', pathMatch: 'full' },
-  { path: 'assetslist', component: AssetlistComponent }
  // { path: 'about',        component: AboutComponent },
  // { path: 'privacy',        component: PrivacyComponent },
  // { path: 'terms',        component: TermsComponent },
@@ -27,4 +25,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents=[OrderlistComponent,AssetlistComponent]
+export const routingComponents=[OrderlistComponent]
