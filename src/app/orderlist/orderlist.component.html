@@ -38,30 +38,26 @@
                 <mat-cell *matCellDef="let row" >{{row.id}}</mat-cell>
               </ng-container>
 
-        <ng-container matColumnDef="customerid">
+        <ng-container matColumnDef="posNeg">
             <mat-header-cell *matHeaderCellDef mat-sort-header>Positive/negative</mat-header-cell>
-            <mat-cell *matCellDef="let row">{{row.customerid}}</mat-cell>
+            <mat-cell *matCellDef="let row">{{row.posNeg}}</mat-cell>
         </ng-container>
 
-        <ng-container matColumnDef="productid">
+        <ng-container matColumnDef="knownSym">
             <mat-header-cell *matHeaderCellDef mat-sort-header>Known symptoms</mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.productid}}</mat-cell>
+            <mat-cell *matCellDef="let row"> {{row.knownSym}}</mat-cell>
         </ng-container>
 
-        <ng-container matColumnDef="ordernumber">
+        <ng-container matColumnDef="knownExp">
             <mat-header-cell *matHeaderCellDef mat-sort-header>Have you had known exposure</mat-header-cell>
-            <mat-cell *matCellDef="let row">{{row.ordernumber}}</mat-cell>
+            <mat-cell *matCellDef="let row">{{row.knownExp}}</mat-cell>
         </ng-container>
 
-        <ng-container matColumnDef="sdate">
+        <ng-container matColumnDef="dot">
             <mat-header-cell *matHeaderCellDef mat-sort-header>Date of last test</mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.sdate}}</mat-cell>
+            <mat-cell *matCellDef="let row"> {{row.dot}}</mat-cell>
         </ng-container>
 
-        <ng-container matColumnDef="edate">
-            <mat-header-cell *matHeaderCellDef mat-sort-header>End Date</mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.edate}}</mat-cell>
-        </ng-container>
 
         <!-- actions -->
         <ng-container matColumnDef="actions">
@@ -72,12 +68,12 @@
             </mat-header-cell>
 
             <mat-cell *matCellDef="let row; let i=index;">
-                <button mat-raised-button color="warn" (click)="startEdit(i, row.id,row.customerid, row.productid, row.ordernumber, row.sdate, row.edate)">
+                <button mat-raised-button color="warn" (click)="startEdit(i, row.id,row.posNeg, row.knownSym, row.knownExp, row.dot)">
                     <mat-icon aria-label="Edit">edit</mat-icon>Edit
                 </button>
 
                 &nbsp;&nbsp;<button mat-raised-button color="accent"
-                    (click)="deleteItem(i, row.id,row.customerid, row.productid, row.ordernumber, row.sdate, row.edate)">
+                    (click)="deleteItem(i, row.id,row.posNeg, row.knownSym, row.knownExp, row.dot)">
                     <mat-icon aria-label="Delete">delete</mat-icon>Delete
                 </button>
             </mat-cell>

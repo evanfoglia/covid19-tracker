@@ -39,11 +39,10 @@ export class OrderService {
   addOrder (order: Order): void {
       this.orderObj = {
         "id": order.id,
-        "customerid": order.customerid,
-        "productid": order.productid,
-        "ordernumber": order.ordernumber,
-        "sdate": order.sdate,
-        "edate": order.edate
+        "posNeg": order.posNeg,
+        "knownSym": order.knownSym,
+        "knownExp": order.knownExp,
+        "dot": order.dot,
       };
       this.httpClient.post("http://localhost:5555/orders/", this.orderObj).subscribe((res:Response) => {
         this.isAdded = true;
@@ -54,11 +53,10 @@ export class OrderService {
   updateOrder (order: Order): void {
     this.orderObj = {
       "id": order.id,
-      "customerid": order.customerid,
-      "productid": order.productid,
-      "ordernumber": order.ordernumber,
-      "sdate": order.sdate,
-      "edate": order.edate
+      "posNeg": order.posNeg,
+      "knownSym": order.knownSym,
+      "knownExp": order.knownExp,
+      "dot": order.dot,
     };
     this.httpClient.put("http://localhost:5555/orders/" + order.id, this.orderObj).subscribe((res:Response) => {
         this.isUpdated = true;

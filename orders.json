@@ -2,51 +2,31 @@
   "orders": [
     {
       "id": 1,
-      "customerid": "1",
-      "productid": "123456789",
-      "ordernumber": "456",
-      "sdate": "20-06-2020",
-      "edate": "20-06-2020"
+      "posNeg": "1",
+      "knownSym": "123456789",
+      "knownExp": "456",
+      "dot": "20-06-2020"
     },
     {
-      "id": 2,
-      "customerid": "2",
-      "productid": "123_456",
-      "ordernumber": "6787",
-      "sdate": "03-06-2020",
-      "edate": "03-06-2020"
+      "id": 1,
+      "posNeg": "1",
+      "knownSym": "123456789",
+      "knownExp": "456",
+      "dot": "20-06-2020"
     },
     {
-      "id": 3,
-      "customerid": "3",
-      "productid": "786_786",
-      "ordernumber": "456",
-      "sdate": "03-20-2020",
-      "edate": "03-20-2020"
+      "id": 1,
+      "posNeg": "1",
+      "knownSym": "123456789",
+      "knownExp": "456",
+      "dot": "20-06-2020"
     },
     {
-      "id": 4,
-      "customerid": "4",
-      "productid": "3434_1",
-      "ordernumber": "4545",
-      "sdate": "03-06-2020",
-      "edate": "03-06-2020"
-    },
-    {
-      "id": 5,
-      "customerid": "5",
-      "productid": "45454656",
-      "ordernumber": "345454_1",
-      "sdate": "04-06-2020",
-      "edate": "04-06-2020"
-    },
-    {
-      "customerid": "6",
-      "productid": "454545",
-      "ordernumber": "56565",
-      "sdate": "03-06-2020",
-      "edate": "05-06-2020",
-      "id": 6
+      "posNeg": "1",
+      "knownSym": "2",
+      "knownExp": "3",
+      "dot": "4",
+      "id": 2
     }
   ]
 }

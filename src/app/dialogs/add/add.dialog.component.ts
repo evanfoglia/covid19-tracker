@@ -22,7 +22,7 @@ export class AddDialogComponent {
 
   getErrorMessage() {
     return this.formControl.hasError('required') ? 'Required field' :
-      this.formControl.hasError('customerid') ? 'Not a valid customerid' :
+      this.formControl.hasError('knownSym') ? 'Not a valid knownExp' :
         '';
   }
 

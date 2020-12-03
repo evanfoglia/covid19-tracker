@@ -1,5 +1,5 @@
 <div class="container">
-  <h3 mat-dialog-title>Order id: {{data.customerid}}</h3>
+  <h3 mat-dialog-title>posNeg: {{data.posNeg}}</h3>
 
   <form class="mat-dialog-content" (ngSubmit)="submit" #formControl="ngForm">
 
@@ -12,7 +12,7 @@
 
         <div class="form">
             <mat-form-field color="accent">
-              <input matInput #input class="form-control" placeholder="CustomerID" [(ngModel)]="data.customerid" name="customerid" required >
+              <input matInput #input class="form-control" placeholder="posNeg" [(ngModel)]="data.posNeg" name="posNeg" required >
               <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
             </mat-form-field>
           </div>
@@ -20,31 +20,26 @@
           <!--Textarea for demo purposes-->
           <div class="form">
             <mat-form-field color="accent">
-              <textarea matInput #input class="form-control" placeholder="ProductID" [(ngModel)]="data.productid" name="productid" required ></textarea>
+              <textarea matInput #input class="form-control" placeholder="knownSym" [(ngModel)]="data.knownSym" name="knownSym" required ></textarea>
               <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
             </mat-form-field>
           </div>
       
           <div class="form">
               <mat-form-field color="accent">
-                <textarea matInput #input class="form-control" placeholder="Order Number" [(ngModel)]="data.ordernumber" name="ordernumber" required ></textarea>
+                <textarea matInput #input class="form-control" placeholder="knownExp" [(ngModel)]="data.knownExp" name="knownExp" required ></textarea>
                 <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
               </mat-form-field>
             </div>
       
             <div class="form">
                 <mat-form-field color="accent">
-                  <textarea pattern="^(?=.*[0-9])[- +()0-9]+$" matInput #input class="form-control" placeholder="Start Date [DD-MM-YYYY]" [(ngModel)]="data.sdate" name="sdate" required ></textarea>
+                  <textarea pattern="^(?=.*[0-9])[- +()0-9]+$" matInput #input class="form-control" placeholder="dot" [(ngModel)]="data.dot" name="dot" required ></textarea>
                   <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
                 </mat-form-field>
               </div>
       
-              <div class="form">
-                  <mat-form-field color="accent">
-                    <textarea pattern="^(?=.*[0-9])[- +()0-9]+$" matInput #input class="form-control" placeholder="End Date [DD-MM-YYYY]" [(ngModel)]="data.edate" name="edate" required ></textarea>
-                    <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
-                  </mat-form-field>
-                </div>
+           
 
    <!--<div class="form">
         <mat-form-field color="accent">

@@ -1,10 +1,16 @@
 export class Order {
-  id: number;
+/*  id: number;
   customerid: number;
   productid: number;
   ordernumber: number;
   sdate:string;
-  edate:string;
+  edate:string;*/
+  id: number;
+  posNeg: string;
+  knownSym: string;
+  knownExp: string;
+  dot: string;
+  
 
 
   /*url: string;

@@ -11,7 +11,7 @@
 
     <div class="form">
       <mat-form-field color="accent">
-        <input matInput #input class="form-control" placeholder="field1" [(ngModel)]="data.customerid" name="customerid" required >
+        <input matInput #input class="form-control" placeholder="Are you positive or negative?" [(ngModel)]="data.posNeg" name="posNeg" required >
         <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
       </mat-form-field>
     </div>
@@ -19,31 +19,25 @@
     <!--Textarea for demo purposes-->
     <div class="form">
       <mat-form-field color="accent">
-        <textarea matInput #input class="form-control" placeholder="field2" [(ngModel)]="data.productid" name="productid" required ></textarea>
+        <textarea matInput #input class="form-control" placeholder="Do you have any known symptoms?" [(ngModel)]="data.knownSym" name="knownSym" required ></textarea>
         <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
       </mat-form-field>
     </div>
 
     <div class="form">
         <mat-form-field color="accent">
-          <textarea matInput #input class="form-control" placeholder="field3" [(ngModel)]="data.ordernumber" name="ordernumber" required ></textarea>
+          <textarea matInput #input class="form-control" placeholder="Haveyou had any known exposure?" [(ngModel)]="data.knownExp" name="knownExp" required ></textarea>
           <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
         </mat-form-field>
       </div>
 
       <div class="form">
           <mat-form-field color="accent">
-            <textarea pattern="^(?=.*[0-9])[- +()0-9]+$" matInput #input class="form-control" placeholder="date1" [(ngModel)]="data.sdate" name="sdate" required ></textarea>
+            <textarea pattern="^(?=.*[0-9])[- +()0-9]+$" matInput #input class="form-control" placeholder="Date of last covid test" [(ngModel)]="data.dot" name="dot" required ></textarea>
             <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
           </mat-form-field>
         </div>
 
-        <div class="form">
-            <mat-form-field color="accent">
-              <textarea pattern="^(?=.*[0-9])[- +()0-9]+$" matInput #input class="form-control" placeholder="date2" [(ngModel)]="data.edate" name="edate" required ></textarea>
-              <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
-            </mat-form-field>
-          </div>
 
     <div mat-dialog-actions>
       <button mat-button [type]="submit" [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="confirmAdd()">Save</button>

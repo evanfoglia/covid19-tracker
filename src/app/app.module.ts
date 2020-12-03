@@ -28,6 +28,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {AssetlistComponent} from './assetlist/assetlist.component';
 import {OrderlistComponent} from './orderlist/orderlist.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import {OrderlistComponent} from './orderlist/orderlist.component';
     DeleteDialogComponent,
     DeleteAssetDialogComponent,
     AssetlistComponent,
-    OrderlistComponent
+    OrderlistComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,

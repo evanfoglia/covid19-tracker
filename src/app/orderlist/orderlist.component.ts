@@ -19,7 +19,7 @@ import {map} from 'rxjs/operators';
 })
 
 export class OrderlistComponent implements OnInit {
-  displayedColumns = ['customerid', 'productid', 'ordernumber', 'sdate', 'edate', 'actions'];
+  displayedColumns = ['posNeg', 'knownSym', 'knownExp', 'dot', 'actions'];
   exampleDatabase: OrderService | null;
   dataSource: ExampleDataSource | null;
   index: number;
@@ -56,13 +56,13 @@ export class OrderlistComponent implements OnInit {
     });
   }
 
-  startEdit(i: number, id: number, customerid: number, productid: number, ordernumber: number, sdate: string, edate: string) {
+  startEdit(i: number, id: number, posNeg: number, knownSym: number, knownExp: number, dot: string) {
     this.id = id;
     // index row is used just for debugging proposes and can be removed
     this.index = i;
     console.log(this.index);
     const dialogRef = this.dialog.open(EditDialogComponent, {
-      data: {id: id, customerid: customerid, productid: productid, ordernumber: ordernumber, sdate: sdate, edate: edate}
+      data: {id: id, posNeg: posNeg, knownSym: knownExp, dot: dot}
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -77,11 +77,11 @@ export class OrderlistComponent implements OnInit {
     });
   }
 
-  deleteItem(i: number, id: number, customerid: number, productid: number, ordernumber: number, sdate: string, edate: string) {
+  deleteItem(i: number, id: number, posNeg: number, knownSym: number, knownExp: number, dot: string) {
     this.index = i;
-    this.id = customerid;
+    this.id = posNeg;
     const dialogRef = this.dialog.open(DeleteDialogComponent, {
-      data: {id: id, customerid: customerid, productid: productid, ordernumber: ordernumber, sdate: sdate, edate: edate}
+      data: {id: id, posNeg:posNeg, knownSym: knownSym, knownExp: knownExp, dot: dot}
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -96,28 +96,9 @@ export class OrderlistComponent implements OnInit {
 
 
   private refreshTable() {
-    // Refreshing table using paginator
-    // Thanks yeager-j for tips
-    // https://github.com/marinantonio/angular-mat-table-crud/issues/12
     this.paginator._changePageSize(this.paginator.pageSize);
   }
 
-
-  /*   // If you don't need a filter or a pagination this can be simplified, you just use code from else block
-    // OLD METHOD:
-    // if there's a paginator active we're using it for refresh
-    if (this.dataSource._paginator.hasNextPage()) {
-      this.dataSource._paginator.nextPage();
-      this.dataSource._paginator.previousPage();
-      // in case we're on last page this if will tick
-    } else if (this.dataSource._paginator.hasPreviousPage()) {
-      this.dataSource._paginator.previousPage();
-      this.dataSource._paginator.nextPage();
-      // in all other cases including active filter we do it like this
-    } else {
-      this.dataSource.filter = '';
-      this.dataSource.filter = this.filter.nativeElement.value;
-    }*/
 
 
 
@@ -174,7 +155,7 @@ export class ExampleDataSource extends DataSource<Order> {
     return merge(...displayDataChanges).pipe(map( () => {
         // Filter data
         this.filteredData = this._exampleDatabase.data.slice().filter((order: Order) => {
-          const searchStr = (order.id + order.customerid + order.productid + order.ordernumber + order.sdate + order.edate).toLowerCase();
+          const searchStr = (order.id + order.posNeg + order.knownSym + order.knownExp + order.dot).toLowerCase();
           return searchStr.indexOf(this.filter.toLowerCase()) !== -1;
         });
 
@@ -204,11 +185,10 @@ export class ExampleDataSource extends DataSource<Order> {
 
       switch (this._sort.active) {
         case 'id': [propertyA, propertyB] = [a.id, b.id]; break;
-        case 'customerid': [propertyA, propertyB] = [a.customerid, b.customerid]; break;
-        case 'productid': [propertyA, propertyB] = [a.productid, b.productid]; break;
-        case 'ordernumber': [propertyA, propertyB] = [a.ordernumber, b.ordernumber]; break;
-        case 'sdate': [propertyA, propertyB] = [a.sdate, b.sdate]; break;
-        case 'edate': [propertyA, propertyB] = [a.edate, b.edate]; break;
+        case 'posNeg': [propertyA, propertyB] = [a.posNeg, b.posNeg]; break;
+        case 'knownSym': [propertyA, propertyB] = [a.knownSym, b.knownSym]; break;
+        case 'knownExp': [propertyA, propertyB] = [a.knownExp, b.knownExp]; break;
+        case 'dot': [propertyA, propertyB] = [a.dot, b.dot]; break;
       /*  case 'url': [propertyA, propertyB] = [a.url, b.url]; break;
         case 'created_at': [propertyA, propertyB] = [a.created_at, b.created_at]; break;
         case 'updated_at': [propertyA, propertyB] = [a.updated_at, b.updated_at]; break;*/
