@@ -1,7 +1,7 @@
 # TLH Covid Tracker
 
 TLH Covid Tracker using CRUD (Create, Read, Update, Delete) implementation on Angular's Mat-Table. Most importantly frontend updates accordingly
-with operations. This is done with the local data in files using Json Server to update the data of the assets and orders
+with operations. This is done with the local data in files using Json Server to update the dataset.
 
 **Executing instructions for this project on Angular version 8 including Angular Material 8.**
 Extract the project in a workspace
@@ -13,9 +13,6 @@ ng s -o  /* This compiles the code and opens a browser window to display the for
 In the second command window, run the following command to enable the orders file to be accessed by application
 json-server -p 5555 orders.json
 
-In the third command window, run the following command to enable the assets file to be accessed by application
-json-server -p 5556 assets.json
-
 ## Screens
 
 Code in action:
@@ -24,45 +21,30 @@ Code in action:
 
 Output in action:
 ![Alt Text](http://localhost:5555/orders)
-![Alt Text](http://localhost:5556/assets)
 
 ## Data in Files
 There are 2 files that this application uses
-1. data1.json
-2. data2.json
+1. orders.json
 
 Instead of using a database, we are using files realtime. These 2 files will serve as 2 tables and any addition,update or deletes done to any of the form date is done directly on these files. (CRUD OPERATIONS)
 
 ## Table structures
 The structure of these files are stored as models in orders.ts and assets.ts
-structure is defined as shown in the assets.ts example
-export class Asset {
-  id: number;
-  compressorid: number;
-  gatewayid: number;
-  chillerid: number;
-  phonenumber: number;
-  simiccid: number;
-}
-
-export class Order {
-  id: number;
-  customerid: number;
-  productid: number;
-  ordernumber: number;
-  sdate:string;
-  edate:string;
-}
+structure is defined as shown in the orders.ts example
+ 
+ id: number;
+  posNeg: string;
+  knownSym: string;
+  knownExp: string;
+  dot: string;
 
 ## Services
-Data in the above 2 files assets.json and orders.json is accessed and updated using 2 services that are listed as providers in the  app.module.ts  shown below. Any changes to the action needs to be done in these services
+Data in orders.json is accessed and updated using the service that are listed as providers in the  app.module.ts  shown below. Any changes to the action needs to be done in these services
 providers: [
     OrderService,
-    AssetService
   ]
 
 The actual service functionality is in the following file
-assets.service.ts
 order.service.ts
 
 
@@ -70,12 +52,10 @@ order.service.ts
 
 The root component called app.component.html lists the options for 2 lists namely 
 orderslist
-assetslist
 with the default being orderlist. The routing is achieved by app-routing.module.ts as follows
 const routes: Routes = [
   { path: 'orderlist', component: OrderlistComponent },
   { path: '',   redirectTo: '/orderlist', pathMatch: 'full' },
-  { path: 'assetslist', component: AssetlistComponent }
  ];
 
 ## Page Rendering
@@ -88,15 +68,6 @@ In the rows, besides fetching the data from orders.json file, it provides featur
 
 When the delete button is clicked, the data to be deleted is displayed using the delete.dialog.html and using the process in delete.dialog.ts the data will be deletes from orders.json.file.
 
-The similar functionality is extended to assets data by the following impacting the assets.json file
-assetlist.components.html
-assetlist.components.ts
-addasset.dialog.htm;
-addasset.dialog.ts
-editasset.dialog.html
-editasset.dialog.ts
-deleteasset.dialog.html
-deleteasset.dialog.ts
 
 ## Downloading the date in CSV, Excel, Text and JSON formats
 The data in the tables/file that can be downloaded in csv,xls,txt and json formats using the exported command as shown below as coded in orderlist.components.html. Similarly it is done for assets too.
