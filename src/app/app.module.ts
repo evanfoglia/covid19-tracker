@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { environment } from "../environments/environment";
+import { AngularFireModule } from "@angular/fire";
+import { AngularFirestoreModule } from "@angular/fire/firestore";
 
+import { AngularFireAuthModule } from "@angular/fire/auth";
 
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
@@ -24,6 +28,8 @@ import {MatListModule} from '@angular/material/list';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {OrderlistComponent} from './orderlist/orderlist.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { AdminComponent } from './admin/admin.component';
+import { AdminRoutingModule } from './admin/admin-routing.module';
 
 
 @NgModule({
@@ -34,6 +40,7 @@ import { HomePageComponent } from './home-page/home-page.component';
     EditDialogComponent,
     DeleteDialogComponent,
     OrderlistComponent,
+    AdminComponent,
     HomePageComponent
   ],
   imports: [
@@ -53,7 +60,10 @@ import { HomePageComponent } from './home-page/home-page.component';
     MatPaginatorModule,
     ReactiveFormsModule,
     MatTableExporterModule,
-    MatSidenavModule
+    MatSidenavModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    AngularFireAuthModule
   ],
   entryComponents: [
     AddDialogComponent,

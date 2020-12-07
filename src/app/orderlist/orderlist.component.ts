@@ -11,6 +11,7 @@ import {EditDialogComponent} from '../dialogs/edit/edit.dialog.component';
 import {DeleteDialogComponent} from '../dialogs/delete/delete.dialog.component';
 import {BehaviorSubject, fromEvent, merge, Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +20,7 @@ import {map} from 'rxjs/operators';
 })
 
 export class OrderlistComponent implements OnInit {
+
   displayedColumns = ['posNeg', 'knownSym', 'knownExp', 'dot', 'actions'];
   exampleDatabase: OrderService | null;
   dataSource: ExampleDataSource | null;
@@ -27,7 +29,8 @@ export class OrderlistComponent implements OnInit {
 
   constructor(public httpClient: HttpClient,
               public dialog: MatDialog,
-              public orderService: OrderService) {}
+              public orderService: OrderService,
+              private firestore: AngularFirestore) {}
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
@@ -46,6 +49,8 @@ export class OrderlistComponent implements OnInit {
       data: {order: order }
     });
 
+
+
     dialogRef.afterClosed().subscribe(result => {
       if (result === 1) {
         // After dialog is closed we're doing frontend updates
@@ -54,6 +59,7 @@ export class OrderlistComponent implements OnInit {
         this.refreshTable();
       }
     });
+
   }
 
   startEdit(i: number, id: number, posNeg: number, knownSym: number, knownExp: number, dot: string) {
